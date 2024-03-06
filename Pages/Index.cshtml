@@ -1,0 +1,32 @@
+﻿@page 
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<div >
+    <table class="mx-auto table">
+        <tr>
+            <th>
+                #
+            </th>
+            <th>
+                Task
+            </th>
+        </tr>
+        @{
+            int counter =1;
+            foreach (var Task in Model.Tasks)
+            {
+                <tr>
+                    <td>@counter</td>
+                    <td>@Task</td>
+                </tr>
+                counter++;
+            }
+        }
+    </table>
+</div>
+
+<form method="post">
+    <input type="submit" value="New Task"/>
+</form>
